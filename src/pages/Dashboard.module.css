@@ -1,0 +1,445 @@
+.dashboardContainer {
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background-color: hsl(var(--card));
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  background-color: hsl(var(--primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.userName {
+  font-size: 14px;
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  color: hsl(var(--muted-foreground));
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.navButton:hover {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+.navButton.active {
+  color: hsl(var(--secondary));
+  background-color: hsl(var(--muted));
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(var(--secondary));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--secondary)),
+    hsl(var(--secondary-gold-light))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: hsl(var(--destructive));
+  color: white;
+  padding: 16px 24px;
+  margin: 0 24px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.errorIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 24px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageTitleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageTitle {
+  font-weight: 600;
+  font-size: 28px;
+  color: hsl(var(--foreground));
+  text-align: right;
+  margin: 0;
+}
+
+.uploadSections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.bankTypeSection {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  margin-top: 0;
+}
+.bankTypeSelect {
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  padding: 12px 12px 12px 40px;
+  font-size: 14px;
+  font-family: "Modam FaNum", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  transition: all 0.2s;
+  direction: rtl;
+  text-align: right;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 8px center;
+  background-size: 16px;
+}
+
+.bankTypeSelect:hover:not(:disabled) {
+  border-color: hsl(var(--secondary));
+  background-color: hsl(var(--muted));
+}
+
+.bankTypeSelect:focus {
+  outline: none;
+  border-color: hsl(var(--secondary));
+  box-shadow: 0 0 0 2px rgba(212, 161, 54, 0.2);
+}
+
+.bankTypeSelect:disabled {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.bankTypeSelect option {
+  font-family: "Modam FaNum", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  direction: rtl;
+  text-align: right;
+}
+
+.bankTypeSelect option[value=""] {
+  color: hsl(var(--muted-foreground));
+  font-style: italic;
+}
+
+.uploadSection {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  padding-inline: 24px;
+  padding-block: 8px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sectionTitle {
+  font-weight: 700;
+  line-height: 22px;
+  text-align: justify;
+  color: #485464;
+}
+
+.sectionContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.addFileButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--primary));
+  border: none;
+  padding: 12px 20px;
+  max-height: 48px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(212, 161, 54, 0.3);
+}
+
+.addFileButton:hover {
+  background-color: hsl(var(--secondary-gold-dark));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(212, 161, 54, 0.4);
+}
+
+.addFileButtonHasFiles {
+  background-color: white;
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary));
+  box-shadow: none;
+}
+
+.addFileButtonHasFiles:hover {
+  background-color: hsl(var(--primary));
+  color: white;
+  border-color: hsl(var(--primary));
+}
+
+.dropZone {
+  border: 2px dashed hsl(var(--border));
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #8a91c3;
+  font-size: 14px;
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: hsl(var(--background));
+}
+
+.dropZone:hover {
+  border-color: hsl(var(--secondary));
+  background-color: hsl(var(--muted));
+}
+
+.dropZone.dragging {
+  border-color: hsl(var(--secondary));
+  background-color: hsl(var(--secondary-gold-light));
+  color: hsl(var(--secondary-gold-dark));
+}
+
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: hsl(var(--muted));
+  border-radius: 6px;
+  border: 1px solid hsl(var(--border));
+}
+
+.deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: transparent;
+  color: hsl(var(--danger));
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.deleteButton:hover {
+  opacity: 0.8;
+  background-color: hsl(var(--primary));
+}
+
+.fileName {
+  flex: 1;
+  font-size: 14px;
+  color: hsl(var(--foreground));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileIcon {
+  color: hsl(var(--muted-foreground));
+}
+
+.uploadButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.uploadButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: hsl(var(--secondary));
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 200px;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(212, 161, 54, 0.3);
+}
+
+.uploadButton:hover:not(:disabled) {
+  background-color: hsl(var(--secondary-gold-dark));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(212, 161, 54, 0.4);
+}
+
+.uploadButton:disabled {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--secondary));
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .navigation {
+    gap: 16px;
+  }
+
+  .mainContent {
+    padding: 16px;
+  }
+
+  .uploadSections {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .uploadSection {
+    padding: 20px;
+  }
+
+  .bankTypeSection {
+    padding: 20px;
+  }
+
+  .errorAlert {
+    margin: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .userInfo {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navButton {
+    width: 100%;
+    text-align: center;
+  }
+}

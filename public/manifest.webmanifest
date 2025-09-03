@@ -1,0 +1,127 @@
+{
+  "name": "PWA Uploader",
+  "short_name": "Uploader",
+  "description": "Upload bank and accounting files and download computed result",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "scope": "/",
+  "lang": "fa",
+  "dir": "rtl",
+  "categories": ["productivity", "business", "finance"],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Main dashboard view"
+    },
+    {
+      "src": "/pwa-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "Desktop view"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Upload Files",
+      "short_name": "Upload",
+      "description": "Quick access to file upload",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "short_name": "History",
+      "description": "View processing history",
+      "url": "/history",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "protocol_handlers": [],
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "application/vnd.ms-excel": [".xls"],
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [
+          ".xlsx"
+        ],
+        "text/csv": [".csv"]
+      }
+    }
+  ]
+}

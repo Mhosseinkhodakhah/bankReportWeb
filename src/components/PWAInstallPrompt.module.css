@@ -1,0 +1,160 @@
+.installPrompt {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  z-index: 1000;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.installContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.installIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: hsl(var(--secondary));
+  border-radius: 8px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.installText {
+  flex: 1;
+  min-width: 0;
+}
+
+.installText h3 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.installText p {
+  margin: 0;
+  font-size: 12px;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.4;
+}
+
+.installActions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.installButton {
+  background-color: hsl(var(--secondary));
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(212, 161, 54, 0.3);
+}
+
+.installButton:hover {
+  background-color: hsl(var(--secondary-gold-dark));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(212, 161, 54, 0.4);
+}
+
+.dismissButton {
+  background-color: transparent;
+  color: hsl(var(--muted-foreground));
+  border: 1px solid hsl(var(--border));
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dismissButton:hover {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+@media (max-width: 640px) {
+  .installPrompt {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  .installContent {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .installIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .installText h3 {
+    font-size: 13px;
+  }
+
+  .installText p {
+    font-size: 11px;
+  }
+
+  .installActions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .installButton,
+  .dismissButton {
+    padding: 6px 12px;
+    font-size: 11px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .installContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .installActions {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .installButton,
+  .dismissButton {
+    flex: 1;
+  }
+}

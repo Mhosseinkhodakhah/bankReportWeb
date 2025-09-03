@@ -1,0 +1,718 @@
+.historyContainer {
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background-color: hsl(var(--card));
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  background-color: hsl(var(--primary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.userName {
+  font-size: 14px;
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  color: hsl(var(--muted-foreground));
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.navButton:hover {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+.navButton.active {
+  color: hsl(var(--secondary));
+  background-color: hsl(var(--muted));
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(var(--secondary));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--secondary)),
+    hsl(var(--secondary-gold-light))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  text-align: center;
+  margin: 0;
+}
+
+.historyTable {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+  font-weight: 600;
+  text-align: right;
+  padding: 16px 12px;
+  border-bottom: 1px solid hsl(var(--border));
+  font-size: 14px;
+}
+
+.table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+  font-size: 14px;
+}
+
+.table tr:hover {
+  background-color: hsl(var(--muted));
+}
+
+.statusBadge {
+  display: inline-block;
+  width: 60%;
+  padding: 4px 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.statusProcessing {
+  background-color: hsl(var(--secondary-gray-soft));
+  color: hsl(var(--secondary-gray));
+}
+
+.statusError {
+  background-color: hsl(var(--error-soft));
+  color: hsl(var(--destructive));
+}
+
+.statusCompleted {
+  background-color: hsl(var(--success-soft));
+  color: hsl(var(--success));
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.actionButtons button:focus,
+.actionButtons button:focus-visible,
+.actionButtons button:active {
+  outline: none;
+  border: none;
+}
+
+.actionButtons button svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+
+.retryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.retryButton:hover {
+  background-color: hsl(var(--destructive));
+  opacity: 0.8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px hsl(var(--destructive-soft));
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.downloadButton:hover {
+  background-color: hsl(var(--success-soft));
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px hsl(var(--success-soft));
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.paginationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 6px;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.paginationButton:focus,
+.paginationButton:focus-visible,
+.paginationButton:active {
+  outline: none;
+}
+
+.paginationButton:hover {
+  background-color: hsl(var(--muted));
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.paginationButton.active {
+  background-color: hsl(var(--secondary));
+  color: white;
+  border: none;
+  box-shadow: 0 2px 6px rgba(212, 161, 54, 0.3);
+}
+
+.footer {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--secondary));
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background-color: hsl(var(--card));
+  border-radius: 12px;
+  padding: 0;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 0 24px;
+  border-bottom: 1px solid hsl(var(--border));
+  padding-bottom: 16px;
+}
+
+.modalTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: hsl(var(--muted-foreground));
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+.modalContent {
+  padding: 24px;
+}
+
+.modalTimestamp {
+  font-size: 14px;
+  color: hsl(var(--muted-foreground));
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.modalQuestion {
+  font-size: 16px;
+  color: hsl(var(--foreground));
+  margin: 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  padding: 0 24px 24px 24px;
+}
+
+.retryConfirmButton {
+  flex: 1;
+  background-color: hsl(var(--secondary));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(212, 161, 54, 0.3);
+}
+
+.retryConfirmButton:hover {
+  background-color: hsl(var(--secondary-gold-dark));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(212, 161, 54, 0.4);
+}
+
+.cancelButton {
+  flex: 1;
+  background-color: hsl(var(--card));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cancelButton:hover {
+  background-color: hsl(var(--muted));
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.exitButton {
+  background-color: hsl(var(--card));
+  color: hsl(var(--foreground));
+  border: 1px solid hsl(var(--border));
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.exitButton:hover {
+  background-color: hsl(var(--muted));
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.reportCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.reportCategory {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: hsl(var(--muted));
+  border-radius: 8px;
+  border: 1px solid hsl(var(--border));
+}
+
+.reportIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: hsl(var(--muted-foreground));
+
+  .successIcon {
+    > circle {
+      stroke: hsl(var(--success));
+    }
+
+    > path {
+      stroke: hsl(var(--success));
+    }
+  }
+
+  .errorIcon {
+    > circle {
+      stroke: hsl(var(--destructive));
+    }
+
+    > line {
+      stroke: hsl(var(--destructive));
+    }
+  }
+}
+
+.reportCategory span {
+  flex: 1;
+  font-size: 14px;
+  color: hsl(var(--foreground));
+}
+
+.downloadReportButton {
+  background-color: hsl(var(--success));
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(34, 197, 94, 0.3);
+}
+
+.downloadReportButton:hover {
+  background-color: hsl(var(--success));
+  opacity: 0.8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(34, 197, 94, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 20px;
+  }
+
+  .historyTable {
+    overflow-x: auto;
+  }
+
+  .table {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .navigation {
+    gap: 16px;
+  }
+
+  .mainContent {
+    padding: 16px;
+  }
+
+  .pageTitle {
+    font-size: 20px;
+  }
+
+  .modal {
+    margin: 20px;
+    max-width: none;
+    max-height: 95vh;
+  }
+
+  .modalOverlay {
+    padding: 10px;
+  }
+
+  .table {
+    font-size: 12px;
+    min-width: 500px;
+  }
+
+  .table th,
+  .table td {
+    padding: 12px 8px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .retryButton,
+  .downloadButton {
+    width: 28px;
+    height: 28px;
+  }
+
+  .statusBadge {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .paginationButton {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .historyTable {
+    border-radius: 8px;
+  }
+
+  .table {
+    min-width: 450px;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 6px;
+  }
+
+  .modalContent {
+    padding: 16px;
+  }
+
+  .modalActions {
+    padding: 0 16px 16px 16px;
+  }
+
+  .reportCategories {
+    max-height: 300px;
+  }
+
+  .reportCategory {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .userInfo {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mainContent {
+    padding: 12px;
+  }
+
+  .pageTitle {
+    font-size: 18px;
+  }
+
+  .table {
+    font-size: 11px;
+    min-width: 400px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 4px;
+  }
+
+  .statusBadge {
+    font-size: 10px;
+    padding: 2px 6px;
+    width: 80%;
+  }
+
+  .actionButtons {
+    gap: 2px;
+  }
+
+  .retryButton,
+  .downloadButton {
+    width: 24px;
+    height: 24px;
+  }
+
+  .paginationButton {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .modal {
+    margin: 10px;
+    border-radius: 8px;
+  }
+
+  .modalHeader {
+    padding: 16px 16px 0 16px;
+    padding-bottom: 12px;
+  }
+
+  .modalTitle {
+    font-size: 16px;
+  }
+
+  .modalContent {
+    padding: 12px;
+  }
+
+  .modalActions {
+    padding: 0 12px 12px 12px;
+  }
+
+  .reportCategory {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .reportCategory span {
+    font-size: 12px;
+  }
+
+  .downloadReportButton {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .table {
+    min-width: 350px;
+  }
+
+  .table th,
+  .table td {
+    padding: 6px 2px;
+  }
+
+  .statusBadge {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+
+  .retryButton,
+  .downloadButton {
+    width: 20px;
+    height: 20px;
+  }
+
+  .paginationButton {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+}

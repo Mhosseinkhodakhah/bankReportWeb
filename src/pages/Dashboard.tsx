@@ -1,4 +1,5 @@
 import { memo, useCallback, useEffect, useMemo, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   uploadExcels,
   processFiles as processFilesAPI,
@@ -19,6 +20,7 @@ type UploadState = {
 type BankType = "meli" | "keshavarzi" | "keshavarzi_periodic" | "saderat";
 
 function DashboardPage() {
+  const navigate = useNavigate();
   const { showToast } = useToast();
   const { execute, isLoading } = useMultipleLoading(["upload", "process"]);
   const [bank, setBank] = useState<UploadState>({ files: [], status: "idle" });
@@ -100,7 +102,7 @@ function DashboardPage() {
 
       setVersion("");
       setAction("idle");
-     
+
       e.currentTarget.value = "";
     },
     [validateExcelFiles, mergeUniqueFiles]
@@ -213,12 +215,14 @@ function DashboardPage() {
         localStorage.setItem("lastUploadStatusId", result.data.uploadStatusId);
       }
       showToast("success", "پردازش فایل‌ها آغاز شد.");
+
+      navigate("/history");
     }).catch((error) => {
       console.error("Process flow failed:", error);
       showToast("error", "آغاز پردازش ناموفق بود!");
       setAction("ready");
     });
-  }, [version, bankType, showToast, execute]);
+  }, [version, execute, bankType, showToast, navigate]);
 
   const removeFile = useCallback(
     (which: "bank" | "acc", index: number) => {
